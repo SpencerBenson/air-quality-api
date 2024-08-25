@@ -46,3 +46,4 @@ yarn.lock
 *.d.ts.map
 *.d.ts
 *.js
+.tsbuildinfo
