@@ -1,7 +1,5 @@
-
 import { CronJob } from 'cron';
 import axios from 'axios';
-import mongoose from 'mongoose';
 import AirQuality from '../models/airQuality.model';
 import 'dotenv/config';
 
@@ -11,13 +9,14 @@ const latitude = process.env.PARIS_LATITUDE as string;
 const longitude = process.env.PARIS_LONGITUDE as string;
 
 const job = new CronJob('*/1 * * * *', async () => {
+    console.log('Cron job started'); // Add logging here
     try {
         const response = await axios.get(nearestCityAPI, {
             params: {
                 lat: latitude,
                 lon: longitude,
-                key: apiKey
-            }
+                key: apiKey,
+            },
         });
 
         const airQualityData = new AirQuality({
@@ -26,10 +25,10 @@ const job = new CronJob('*/1 * * * *', async () => {
             time: new Date(),
         });
 
-        await airQualityData.save();
-        console.log('Air quality data saved for Paris');
+        const savedData = await airQualityData.save();
+        console.log('Air quality data saved for Paris:', savedData); // Add logging here
     } catch (error) {
-        console.error('Error fetching air quality data:', error);
+        console.error('Error fetching air quality data:', error); // Add error logging
     }
 });
 
