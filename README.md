@@ -72,7 +72,7 @@ Adjust logging and configuration settings as needed in the src/config directory.
 
 ## MongoDB Screenshot 
 
-![Data as seem on MongoDB Compass](https://github.com/spencerBenson/air-quality-api/blob/main/paris_air_quality_collection.png?raw=true)
+![Data as seen on MongoDB Compass](https://github.com/SpencerBenson/air-quality-api/blob/main/src/paris_air_quality_collection.png?raw=true)
 
 ## License
 
