@@ -70,6 +70,10 @@ This will run all the test suites that I have defined.It will also include the t
 Ensure MongoDB is running before starting the application.
 Adjust logging and configuration settings as needed in the src/config directory.
 
+## MongoDB Screenshot 
+
+![Data as seem on MongoDB Compass](https://github.com/spencerBenson/air-quality-api/blob/main/paris_air_quality_collection.png?raw=true)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
